@@ -2,31 +2,50 @@ import sys
 import random
 from enum import Enum
 
+
 class RPS(Enum):
     ROCK = 1
-    SCISSORS = 2
-    PAPER = 3
-
-playerChoice = (input("Enter...\n1 for Rock\n2 for scissors\n3 for paper\n"))
+    PAPER = 2
+    SCISSORS = 3
 
 
-player = int(playerChoice)
+playagain = True
 
-if player < 1 | player > 3:
-    sys.exit("Please enter a valid value")
+while playagain:
 
-computerChoice = random.choice("123")
+    playerchoice = input(
+        "\nEnter... \n1 for Rock,\n2 for Paper, or \n3 for Scissors:\n\n")
 
-computer = int(computerChoice)
+    player = int(playerchoice)
 
-print("\nYou chose " + str(RPS(player).name) + "\nCompute Chose " + str(RPS(computer).name) + "\n")
+    if player < 1 or player > 3:
+        sys.exit("You must enter 1, 2, or 3.")
 
-isDraw = player == computer
-computerWins = (player == 1 & computer == 3 | player == 2 & computer == 1 | player == 3 & computer == 2) 
-if isDraw:
-    print("Game Draw!")
-elif computerWins:    
-    print("Computer Wins")
-else:
-    print("Player Wins")
-sys.exit()
+    computerchoice = random.choice("123")
+
+    computer = int(computerchoice)
+
+    print("\nYou chose " + str(RPS(player)).replace('RPS.', '').title() + ".")
+    print("Python chose " + str(RPS(computer)).replace('RPS.', '').title() + ".\n")
+
+    if player == 1 and computer == 3:
+        print("🎉 You win!")
+    elif player == 2 and computer == 1:
+        print("🎉 You win!")
+    elif player == 3 and computer == 2:
+        print("🎉 You win!")
+    elif player == computer:
+        print("😲 Tie game!")
+    else:
+        print("🐍 Python wins!")
+
+    playagain = input("\nPlay again? \nY for Yes or \nQ to Quit \n\n")
+
+    if playagain.lower() == "y":
+        continue
+    else:
+        print("\n🎉🎉🎉🎉")
+        print("Thank you for playing!\n")
+        playagain = False
+
+sys.exit("Bye! 👋")
