@@ -18,3 +18,10 @@ def noLogicFunction():
 
 def add(num, num2):
     return num + num2
+
+
+# Learn Python 
+
+# W3Schools 
+# Python For Everybody Coursera
+# Kaggle Python 
