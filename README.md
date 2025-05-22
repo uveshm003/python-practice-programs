@@ -42,3 +42,11 @@ This repository is under the [Specify a License, e.g., MIT License](LICENSE) (if
 ## Contact
 
 If you have any questions or comments about the code in this repository, feel free to reach out to me at [Your Email Address] or connect with me on [Your LinkedIn Profile URL/Other Platform].
+
+<!--
+Learn Python
+    learnpython.org
+    Draw heart using Python.
+    password generator based on params.
+    write your own timerscripts.
+ -->
